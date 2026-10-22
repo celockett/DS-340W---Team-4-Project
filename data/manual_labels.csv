@@ -1,0 +1,69 @@
+photo_id,photo_filename,segment_id,location_description,brick_cobblestone,bumpy,construction,cracks,grass,height_difference,narrow_sidewalk,rail_tram_track,sand_gravel,uneven_slanted,utility_panel,very_broken,grate
+SW001,SW001.jpeg,S001,"Flagstone sidewalk leading to Entrance B (E010), Waring Commons (B002)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW002,SW002.jpeg,S002,"Concrete sidewalk near Entrance B(E010), Waring Commons (B002)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW003,SW003.jpeg,S003,"Concrete sidewalk with drain grate near Entrance B(E010), Waring Commons (B002) ",0,0,0,1,0,0,0,0,0,0,0,0,1
+SW004,SW004.jpeg,S004,Concrete segment connecting Pollock Rd. to Waring Commons (B002),0,0,0,0,0,0,0,0,0,0,1,0,0
+SW005,SW005.jpeg,S005,Concrete sidewalk next to Hamilton Hall,0,0,0,1,0,0,0,0,0,0,0,0,0
+SW006,SW006.jpeg,S006,Concrete sidewalk intersection with utility panel next to Hamilton Hall,0,0,0,0,0,0,0,0,0,0,1,0,0
+SW007,SW007.jpeg,S007,Concrete sidewalk intersection near Pollock Rd and Phi Gamma Delta,0,0,0,0,0,0,0,0,0,0,0,0,0
+SW008,SW008.jpeg,S008,Brick paver sidewalk near curb ramp transition on Pollock Rd,1,0,0,0,0,0,0,0,0,0,0,0,0
+SW009,SW009.jpeg,S009,Brick paver sidewalk alongside road with round utility manhole cover at the edge on Pollock Rd,1,0,0,0,0,0,0,0,0,0,1,0,0
+SW010,SW010.jpeg,S010,Concrete sidewalk ramp leading to a painted pedestrian crosswalk at Pollock Rd and N Burrowes Rd 3-way stop,0,0,0,1,0,0,0,0,0,0,0,0,0
+SW011,SW011.jpeg,S011,Concrete sidewalk running along N Burrowes Rd towards Waring Commons (B002) with multiple round utility covers,0,0,0,0,0,0,0,0,0,0,1,0,0
+SW012,SW012.jpeg,S012,Concrete sidewalk intersection with a round utility cover nearing Hamilton Hall,0,0,0,0,0,0,0,0,0,0,1,0,0
+SW013,SW013.jpeg,S013,Concrete walkway with sewer manhole cover leading toward steps between Phi Gamma Delta and Hamilton Hall,0,0,0,1,0,0,0,0,0,0,1,0,0
+SW014,SW014.jpeg,S014,Concrete sidewalk between Phi Gamma Delta and Hamilton Hall,0,0,0,0,0,0,1,0,0,0,0,0,0
+SW015,SW015.jpeg,S015,Concrete sidewalk curb ramp with blue tactile warning paving at a painted crosswalk nearing Waring Commons (B002),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW016,SW016.jpeg,S016,Sloped concrete accessibility ramp with handrails leading to Waring Commons (B002),0,0,0,0,0,0,1,0,0,1,0,0,0
+SW017,SW017.jpeg,S017,Concrete walkway at top of SW016 accessibility ramp featuring a large metal ventilation grate embedded in the floor,0,0,0,1,0,0,0,0,0,0,0,0,1
+SW018,SW018.jpeg,S018,Concrete sidewalk in front of West Residence Halls sign with prominent cracks and an orange traffic cone,0,0,1,1,0,0,0,0,0,0,0,0,0
+SW019,SW019.jpeg,S019,Grooved concrete curb ramp leading to a painted pedestrian crosswalk near Waring Commons (B002) to Recreation Building (B003),0,0,0,1,0,0,0,0,0,0,0,0,0
+SW020,SW020.jpeg,S020,Sidewalk curb ramp transition near painted crosswalk coming from Waring Commons (B002) towards McKee Hall,0,0,0,0,0,0,0,0,0,0,0,0,0
+SW021,SW021.jpeg,S021,"Concrete sidewalk ramp with damaged tactile warning pad leading to Entrance C (E011), Waring Commons (B002)",0,0,0,0,0,0,0,0,0,0,0,1,0
+SW022,SW022.jpeg,S022,"Concrete landing area at Entrance C (E011), Waring Commons (B002)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW023,SW023.jpeg,S023,"Concrete sidewalk path along N Burrowes Rd, in front of McKee Hall",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW024,SW024.jpeg,S024,Concrete sidewalk curb ramp with gray tactile warning pad at a marked crosswalk crossing N Burrowes Rd to Recreation Building (B003),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW025,SW025.jpeg,S025,"Concrete plaza and curving walkway section next to Entrance D (E015), Recreation Building (B003)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW026,SW026.jpeg,S026,"Concrete walkway landing at the base of stairwell leading to Entrance E (E016), Recreation Building (B003)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW027,SW027.jpeg,S027,Concrete sidewalk intersection on Curtin Rd side of Recreation Building (B003),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW028,SW028.jpeg,S028,Wide concrete walkway split into two textures with a transverse double-brick paver accent line on the front side of Recreation Building (B003),1,0,0,1,0,0,0,0,0,0,0,0,0
+SW029,SW029.jpeg,S029,Concrete walkway approach leading to entrance doors of Recreation Building,0,0,0,0,0,0,0,0,0,0,0,0,0
+SW030,SW030.jpeg,S030,Concrete sidewalk with grooved ramp section near Recreationg Building (B003),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW031,SW031.jpeg,S031,"Large brick paver plaza area leading to Entrance C (E014), Recreation Building (B003)",1,0,0,0,0,0,0,0,0,0,0,0,0
+SW032,SW032.jpeg,S032,"Walkway with alternating red brick paver and concrete bands leading to Entrance B (E013), Recreation Building (B003)",1,0,0,0,0,0,0,0,0,0,0,0,0
+SW033,SW033.jpeg,S033,Concrete sidewalk running alongside a black construction site fence along N Burrowes Rd near Alpha Zeta,0,0,1,0,0,0,0,0,0,0,0,0,0
+SW034,SW034.jpeg,S034,Concrete curb ramp with tactile paving mat leading to a painted pedestrian crosswalk near N Burrowes Rd,0,0,0,0,0,0,0,0,0,0,0,0,0
+SW035,SW035.jpeg,S035,Wide concrete walkway bridge/ramp approach toward Westgate Building (B001),0,0,0,1,0,0,0,0,0,1,0,0,0
+SW036,SW036.jpeg,S036,Concrete walkway area outside West Entrance A (E005) of Westgate Building (B001) ,0,0,0,1,0,0,0,0,0,0,0,0,0
+SW037,SW037.jpeg,S037,"Concrete landing area at East Entrance D (E004), Westgate Building (B001)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW038,SW038.jpeg,S038,Concrete sidewalk junction outside Westgate Building (B001) between Noll Lab (B004),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW039,SW039.jpeg,S039,"Concrete sidewalk near Entrance B(E020), Noll Lab (B004)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW040,SW040.jpeg,S040,"Concrete entrance plaza outside of Entrance B (E020), Noll Lab (B004)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW041,SW041.jpeg,S041,"Concrete sidewalk fork with embedded round utility manhole cover near Entrance A (E019), Noll Lab (B004) and Recreation Building (B003)",0,0,0,0,0,0,0,0,0,0,1,0,0
+SW042,SW042.jpeg,S042,"Concrete walkway area outside Entrance A (E019), Noll Lab (B004)",0,0,0,0,0,0,0,0,0,0,1,0,0
+SW043,SW043.jpeg,S043,Concrete curb ramp with red tactile warning pad leading to N Atherton St marked crosswalk near Entrance A (E012) of Recreation Building (B003),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW044,SW044.jpeg,S044,"Straight concrete walkway along N Atherton St near Entrance A (E012), Recreation Building (B003)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW045,SW045.jpeg,S045,"Red brick paver walkway leading to Entrance A (E012), Recreation Building (B003)",1,0,0,0,0,0,0,0,0,0,0,0,0
+SW046,SW046.jpeg,S046,Concrete walkway bordered by shrubs and lawn between Entrance A (E012) and Entrance F (E017) of Recreation Building (B003),0,0,0,1,0,0,0,0,0,0,0,0,0
+SW047,SW047.jpeg,S047,"Concrete sidewalk with round metal manhole cover along N Atherton  St near Entrance F (E017), Recreation Building (B003)",0,0,0,1,0,0,0,0,0,0,1,0,0
+SW048,SW048.jpeg,S048,"Concrete sidewalk intersection near Entrance F (E017), Recreation Building (B003)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW049,SW049.jpeg,S049,"Concrete walkway approach near Entrance F (E017), Recreation Building (B003)",0,0,0,0,0,0,0,0,0,1,0,0,0
+SW050,SW050.jpeg,S050,"Concrete entrance walkway under overhang of Entrance F (E017), Recreation Building (B003)",0,0,0,1,0,1,0,0,1,0,0,1,0
+SW051,SW051.jpeg,S051,Concrete sidewalk ramp with dark tactile warning paving leading to a marked crosswalk along N Atherton St by Recreation Building (B003),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW052,SW052.jpeg,S052,Concrete sidewalk fork near N Atherton St and Curtin Rd intersection,0,0,0,0,0,0,0,0,0,0,0,0,0
+SW053,SW053.jpeg,S053,Wide concrete walkway junction near Pollock Rd and Westgate Building (B001),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW054,SW054.jpeg,S054,"Concrete plaza area near East Entrance A (E001), Westgate Building (B001)with multiple round utility manhole covers",0,0,0,0,0,0,0,0,0,0,1,0,0
+SW055,SW055.jpeg,S055,"Curving concrete walkway by East Entrance A (E001), Westgate Building (B001)",0,0,0,0,0,0,0,0,0,1,0,0,0
+SW056,SW056.jpeg,S056,"Y-shaped concrete walkway near East Entrance C (E003), Westgate Building (B001)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW057,SW057.jpeg,S057,Concrete walkway leading up to an outdoor staircase of East Entrance C (E003) of Westgate Building (B001),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW058,SW058.jpeg,S058,Curving concrete path near Westgate Building (B001) and Noll Lab (B004),0,0,0,0,0,0,0,0,0,0,0,0,0
+SW059,SW059.jpeg,S059,"Concrete landing area right outside East Entrance B (E002), Westgate Building (B001)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW060,SW060.jpeg,S060,"Covered concrete walkway near West Entrance B (E006), Westgate Building (B001)",0,0,0,1,0,0,0,0,0,0,0,0,1
+SW061,SW061.jpeg,S061,"Wide elevated concrete walkway near West Entrance D (E008), Westgate Building (B001)",0,0,0,1,0,0,0,0,0,1,0,1,1
+SW062,SW062.jpeg,S062,"Concrete walkway near West Entrance C (E007), Westgate Building (B001)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW063,SW063.jpeg,S063,"Concrete walkway intersection near West Entrance C (E007), Westgate Building (B001)",0,0,0,0,0,1,0,0,0,1,0,0,0
+SW064,SW064.jpeg,S064,"Concrete sidewalk running parallel to an asphalt road/parking area near West Entrance C (E007), Westgate Building (B001)",0,0,0,1,0,1,0,0,0,0,0,0,1
+SW065,SW065.jpeg,S065,"Enclosed ramp path bounded by metal handrails leading to West Entrance C (E007), Westgate Building (B001)",0,0,0,1,0,0,0,0,0,1,1,0,0
+SW066,SW066.jpeg,S066,"Straight concrete sidewalk next to an asphalt road between West Entrance C (E007) and West Entrance D (E008), Westgate Building (B001)",0,0,0,1,0,0,0,0,0,0,0,0,0
+SW067,SW067.jpeg,S067,"Concrete sidewalk splitting into a Y-fork leading to ECORE and West Entrance D (E008), Westgate Building (B001)",0,0,0,0,0,0,0,0,0,0,0,0,0
+SW068,SW068.jpeg,S068,"Concrete entrance plaza outside West Entrance D (E008), Westgate Building (B001",0,0,1,0,0,0,0,0,0,0,0,0,0
