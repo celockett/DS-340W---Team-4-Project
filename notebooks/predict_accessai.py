@@ -1,6 +1,5 @@
 import os
 import sys
-import csv
 from pathlib import Path
 from copy import deepcopy
 
@@ -15,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if not torch.cuda.is_available():
     os.environ["XFORMERS_DISABLED"] = "1"
 
-sys.path.insert(0, str(ROOT / "dinov2"))
+sys.path.insert(0, str(ROOT))
 from dinov2.models.vision_transformer import vit_base
 
 IMAGE_DIR = Path.home() / "Downloads" / "Sidewalk Photos"
@@ -47,7 +46,7 @@ class ResizeAndPad:
         return transforms.Pad(
             (w // 2, h // 2, w - w // 2, h - h // 2)
         )(image)
-    
+
 class Classifier(nn.Module):
     def __init__(self):
         super().__init__()
@@ -62,10 +61,11 @@ class Classifier(nn.Module):
             nn.ReLU(),
             nn.Linear(256, 13)
         )
+
     def forward(self, x):
         x = self.transformer(x)
         return self.classifier(self.transformer.norm(x))
-    
+
 device = torch.device("cpu")
 
 model = Classifier()
@@ -85,7 +85,6 @@ preprocess = transforms.Compose([
 ])
 
 MANUAL_LABELS = ROOT / "data/manual_labels.csv"
-
 manual = pd.read_csv(MANUAL_LABELS, dtype=str)
 
 photo_manifest = manual[["photo_id", "photo_filename"]].copy()
@@ -145,4 +144,3 @@ for photo_id, path in image_files:
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 pd.DataFrame(results).to_csv(OUTPUT, index=False)
 print("Saved predictions to:", OUTPUT)
-    
