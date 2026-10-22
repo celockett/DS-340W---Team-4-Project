@@ -1,0 +1,37 @@
+build/
+dist/
+*.egg-info/
+**/__pycache__/
+
+**/.ipynb_checkpoints
+**/.ipynb_checkpoints/**
+
+*.swp
+
+.vscode/
+.idea/
+
+# Files downloaded while using the repo that shouldn't be checked in.
+dinov2_vitb14_reg4_pretrain.pth
+notebooks/models/
+datasets/
+inference-results/
+# Ignore generated results by default
+results/*
+
+# Allow AccessAI results and plots
+!results/accessai_model_predictions.csv
+!results/accessai_evaluation.csv
+!results/accessai_tag_metrics.csv
+!results/accessai_merged_scores_labels.csv
+!results/utility_panel_crop_test.csv
+!results/accessai_plots/
+!results/accessai_plots/**
+
+# Local and downloaded files
+.DS_Store
+Miniconda3-latest-MacOSX-arm64.sh
+SurfaceProblem.zip
+
+# Sample images downloaded for testing
+notebooks/dataset_samples/

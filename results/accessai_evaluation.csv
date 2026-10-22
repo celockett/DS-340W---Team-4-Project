@@ -1,0 +1,13 @@
+condition,photos_checked,manual_positive,model_positive,precision,recall,f1_score
+brick_cobblestone,68,6,6,0.8333333333333334,0.8333333333333334,0.8333333333333334
+bumpy,68,0,0,,,
+construction,68,3,0,,0.0,0.0
+cracks,68,25,7,0.8571428571428571,0.24,0.375
+grass,68,0,1,0.0,,0.0
+height_difference,68,3,4,0.0,0.0,0.0
+narrow_sidewalk,68,2,24,0.08333333333333333,1.0,0.15384615384615385
+rail_tram_track,68,0,0,,,
+sand_gravel,68,1,0,,0.0,0.0
+uneven_slanted,68,7,0,,0.0,0.0
+utility_panel,68,11,0,,0.0,0.0
+very_broken,68,3,0,,0.0,0.0
