@@ -234,7 +234,7 @@ inference_dataset_dir = Path(dataset_dir_path + "/" + params['inference_set_dir_
 # top tp, fp, fn, tn images are saved here
 inference_results_dir = Path("../inference-results")
 
-model_name = ('models/' + params['dataset_type'] + '-' + params['pretrained_model_prefix']
+model_name = ('../notebooks/models/' + params['dataset_type'] + '-' + params['pretrained_model_prefix']
               + '-cls-b-' + params['label_type'] + '-' + params['c12n_category'] + '-best.pth')
 # ------------------------------
 
