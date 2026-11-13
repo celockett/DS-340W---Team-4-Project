@@ -1,4 +1,4 @@
-photo_id,photo_filename,segment_id,location_description,brick_cobblestone,bumpy,construction,cracks,grass,height_difference,narrow_sidewalk,rail_tram_track,sand_gravel,uneven_slanted,utility_panel,very_broken,grate
+photo_id,photo_filename,location_description,brick_cobblestone,bumpy,construction,cracks,grass,height_difference,narrow_sidewalk,rail_tram_track,sand_gravel,uneven_slanted,utility_panel,very_broken,grate
 SW001,SW001.jpeg,"Flagstone sidewalk leading to Entrance B (E010), Waring Commons (B002)",0,0,0,0,0,0,0,0,0,0,0,0,0
 SW002,SW002.jpeg,"Concrete sidewalk near Entrance B(E010), Waring Commons (B002)",0,0,0,1,0,0,0,0,0,0,0,0,0
 SW003,SW003.jpeg,"Concrete sidewalk with drain grate near Entrance B(E010), Waring Commons (B002) ",0,0,0,1,0,0,0,0,0,0,0,0,1
