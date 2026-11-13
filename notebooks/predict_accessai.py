@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if not torch.cuda.is_available():
     os.environ["XFORMERS_DISABLED"] = "1"
 
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "dinov2"))
 from dinov2.models.vision_transformer import vit_base
 
 IMAGE_DIR = Path.home() / "Downloads" / "Sidewalk Photos"
@@ -84,28 +84,61 @@ preprocess = transforms.Compose([
     )
 ])
 
-images = sorted(
-    p for p in IMAGE_DIR.iterdir()
-    if p.suffix.lower() in {".jpg", ".jpeg", ".png"}
-    and not p.stem.endswith(" copy")
-)
+MANUAL_LABELS = ROOT / "data/manual_labels.csv"
+
+manual = pd.read_csv(MANUAL_LABELS, dtype=str)
+
+photo_manifest = manual[["photo_id", "photo_filename"]].copy()
+
+for column in ["photo_id", "photo_filename"]:
+    photo_manifest[column] = photo_manifest[column].str.strip()
+
+if photo_manifest.isna().any().any():
+    raise ValueError("Missing photo IDs or filenames in manual_labels.csv")
+
+if photo_manifest["photo_id"].duplicated().any():
+    raise ValueError("Duplicate photo IDs in manual_labels.csv")
+
+if photo_manifest["photo_filename"].duplicated().any():
+    raise ValueError("Duplicate photo filenames in manual_labels.csv")
+
+image_files = []
+
+for _, row in photo_manifest.iterrows():
+    photo_id = row["photo_id"]
+    filename = row["photo_filename"]
+
+    if Path(filename).name != filename:
+        raise ValueError(f"Invalid photo filename: {filename}")
+
+    image_path = IMAGE_DIR / filename
+
+    if not image_path.is_file():
+        raise FileNotFoundError(f"Missing image: {image_path}")
+
+    image_files.append((photo_id, image_path))
+
+print(f"Found {len(image_files)} labeled photos.")
 
 results = []
 
-for path in images:
-    with Image.open(path) as image:
-        image = ImageOps.exif_transpose(image).convert("RGB")
-        image = preprocess(image).unsqueeze(0).to(device)
+for photo_id, path in image_files:
+    with Image.open(path) as pil_image:
+        pil_image = ImageOps.exif_transpose(pil_image).convert("RGB")
+        input_tensor = preprocess(pil_image).unsqueeze(0).to(device)
 
     with torch.no_grad():
-        logits = model(image).squeeze(0).cpu()
+        logits = model(input_tensor).squeeze(0).cpu()
+
     scores = torch.sigmoid(logits).tolist()
     logits = logits.tolist()
 
-    row = {"photo_id": path.stem, "photo_filename": path.name}
+    row = {"photo_id": photo_id, "photo_filename": path.name}
+
     for index, tag in TAGS.items():
         row[f"score_{tag}"] = scores[index]
         row[f"logit_{tag}"] = logits[index]
+
     results.append(row)
     print("Processed:", path.name)
 
