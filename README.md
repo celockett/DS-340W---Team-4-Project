@@ -24,7 +24,7 @@ https://www.sciencedirect.com/science/article/pii/S2667091725000664
 
 ## Dataset
 
-We use sidewalk accessibility data and research resources associated with Project Sidewalk and the first parent paper. Our current preliminary evaluation also uses 68 campus sidewalk images with manual labels to examine model predictions for selected accessibility-related conditions.
+We use sidewalk accessibility data and research resources associated with Project Sidewalk and the first parent paper. Our current preliminary evaluation also uses 71 campus sidewalk images with manual labels to examine model predictions for selected accessibility-related conditions.
 
 ## Current Direction
 
