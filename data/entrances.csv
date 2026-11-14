@@ -1,0 +1,21 @@
+entrance_id,building_id,entrance_name,entrance_accessible,photo_filename
+E001,B001,East Entrance A,Yes,E001.jpeg
+E002,B001,East Entrance B,Yes,E002.jpeg
+E003,B001,East Entrance C,No,E003.jpeg
+E004,B001,East Entrance D,Yes,E004.jpeg
+E005,B001,West Entrance A,Yes,E005.jpeg
+E006,B001,West Entrance B,Yes,E006.jpeg
+E007,B001,West Entrance C,Yes,E007.jpeg
+E008,B001,West Entrance D,Yes,E008.jpeg
+E009,B002,Entrance A,Yes,E009.jpeg
+E010,B002,Entrance B,No,E010.jpeg
+E011,B002,Entrance C,No,E011.jpeg
+E012,B003,Entrance A,Yes,E012.jpeg
+E013,B003,Entrance B,Yes,E013.jpeg
+E014,B003,Entrance C,Yes,E014.jpeg
+E015,B003,Entrance D,No,E015.jpeg
+E016,B003,Entrance E,Yes,E016.jpeg
+E017,B003,Entrance F,Yes,E017.jpeg
+E018,B003,Entrance G,No,E018.jpeg
+E019,B004,Entrance A,No,E019.jpeg
+E020,B004,Entrance B,Yes,E020.jpeg
