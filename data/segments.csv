@@ -1,6 +1,6 @@
 segment_id,start_point,end_point,photos,distance_m,drain_grate_present,stairs,slope_level,surface,obstacle
 S001,N001,N002,"SW035, SW054, SW059",73.76,Yes,No,Moderate,Concrete,None
-S002,N001,N023,"SW053, SW054",103.63,Yes,No,Flat,Concrete,None 
+S002,N001,N023,"SW053, SW054",103.63,Yes,No,Flat,Concrete,None
 S003,N001,N025,SW054,62.48,Yes,No,Flat,Concrete ,None
 S004,N001,N026,"SW054, SW055",59.74,Yes,No,Flat ,Concrete,None
 S005,N002,N004,"SW037, SW059",260.6,No,No,Moderate,Concrete,None
@@ -10,7 +10,7 @@ S008,N003,N005,"SW035, SW036, SW055, SW056, SW057",285.6,No,Yes,Moderate,Concret
 S009,N003,N026,"SW056, SW057",119.48,No,Yes,Flat,Concrete,None
 S010,N003,N030,"SW056, SW057",35.66,No,Yes,Flat,Concrete,None
 S011,N004,N005,"SW036, SW037",9.14,No,Yes,Flat,Concrete,None
-S012,N004,N005,"SW035, SW036, SW037, SW038, SW053",260.91,,No,,,
+S012,N004,N005,"SW035, SW036, SW037, SW038, SW053",260.91,Yes,No,Moderate,Concrete,None
 S013,N004,N021,"SW037, SW038",54.86,No,No,Flat,Concrete,None
 S014,N004,N023,"SW037, SW038, SW053",85.34,No,No,Flat,Concrete,None
 S015,N005,N006,"SW036, SW060",89.31,Yes,No,Gentle,Concrete,None
@@ -49,9 +49,9 @@ S047,N023,N024,"SW034, SW053",53.64,No,No,Flat,Concrete,None
 S048,N023,N025,SW053,64.01,No,No,Flat,Concrete,None
 S049,N024,N025,SW034,41.76,No,No,Flat,Concrete,None
 S050,N024,N027,SW034,41.45,No,No,Flat,"Concrete, Asphalt",None
-S051,N025,N026,SW069,76.2,Unknown,No,Flat,"Concrete, Brick",None
+S051,N025,N026,"SW069, SW070",76.2,No,No,Flat,"Concrete, Brick",None
 S052,N025,N027,SW010,37.49,No,No,Flat,"Concrete, Asphalt",None
-S053,N026,N030,"SW056, SW070, SW071",122.22,Unknown,No,Flat,Concrete,None
+S053,N026,N030,"SW056, SW070, SW071",122.22,No,No,Flat,Concrete,None
 S054,N027,N032,"SW004, SW005, SW006, SW007, SW008, SW009, SW010",159.41,Yes,No,Flat,"Concrete, Brick",None
 S055,N028,N033,"SW020, SW023, SW024",77.72,Yes,No,Gentle,"Concrete, Asphalt",None
 S056,N029,N031,"SW043, SW044, SW046, SW047, SW048, SW051, SW052",174.96,Yes,No,Flat,Concrete,None
