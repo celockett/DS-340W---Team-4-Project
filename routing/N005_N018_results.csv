@@ -1,0 +1,8 @@
+Approach,Distance (m),Routing Cost
+Standard,209.09,209.09
+Avoid Stairs,452.02,452.02
+Accessibility Weighted,474.57,544.57
+DINOv2,460.86,671.1
+DINOv2 Gradual,460.86,662.53
+Reduced Cracks,460.86,606.81
+Reduced Both,460.86,606.69
