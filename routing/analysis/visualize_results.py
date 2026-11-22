@@ -1,7 +1,9 @@
-
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
+RESULTS_DIR = Path(__file__).resolve().parent / "results"
+RESULTS_DIR.mkdir(exist_ok=True)
 # -----------------------------------
 # 1. N005 -> N018: Seven approaches
 # -----------------------------------
@@ -32,7 +34,7 @@ print("\nN005 -> N018 RESULTS")
 print(df.to_string(index=False))
 
 # Save table
-df.to_csv("N005_N018_results.csv", index=False)
+df.to_csv(RESULTS_DIR / "N005_N018_results.csv", index=False)
 
 # -----------------------------------
 # 2. Gradual vs. Original DINOv2
@@ -54,7 +56,7 @@ print("\nDINOv2 VS. GRADUAL SCORING")
 print(gradual_df.to_string(index=False))
 
 # Save table
-gradual_df.to_csv("gradual_comparison.csv", index=False)
+gradual_df.to_csv(RESULTS_DIR / "gradual_comparison.csv", index=False)
 
 # Create bar graph
 ax = gradual_df.set_index("Route")[["DINOv2", "Gradual"]].plot(
@@ -70,7 +72,7 @@ ax.legend(title="Approach")
 ax.tick_params(axis="x", rotation=0)
 
 plt.tight_layout()
-plt.savefig("gradual_comparison.png", dpi=300)
+plt.savefig(RESULTS_DIR / "gradual_comparison.png", dpi=300)
 plt.show()
 
 # -----------------------------------
@@ -95,7 +97,7 @@ print("\nROUTE AVAILABILITY")
 print(availability.to_string(index=False))
 
 # Save table
-availability.to_csv("route_availability.csv", index=False)
+availability.to_csv(RESULTS_DIR / "route_availability.csv", index=False)
 
 # Create availability graph
 plt.figure(figsize=(9, 5))
@@ -111,5 +113,5 @@ plt.ylim(0, 5.5)
 plt.xticks(rotation=30, ha="right")
 plt.tight_layout()
 
-plt.savefig("route_availability.png", dpi=300)
+plt.savefig(RESULTS_DIR / "route_availability.png", dpi=300)
 plt.show()

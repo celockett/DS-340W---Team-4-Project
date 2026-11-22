@@ -5,7 +5,7 @@ from collections import defaultdict, deque
 
 
 def load_graph(avoid_stairs=False):
-    csv_path = Path(__file__).resolve().parents[1] / "data" / "segments.csv"
+    csv_path = Path(__file__).resolve().parents[2] / "data" / "segments.csv"
     graph = defaultdict(list)
 
     with open(csv_path, "r", newline="", encoding="utf-8-sig") as file:

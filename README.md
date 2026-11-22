@@ -4,9 +4,25 @@
 
 AI-Powered Accessibility Detection and Route Recommendation on Penn State's Campus
 
-## Project Description
+## Project Overview
 
-AccessAI aims to explore accessibility-aware route recommendation on Penn State's campus. Our project will build from existing research in sidewalk accessibility detection and routing.
+AccessAI is an accessibility-focused navigation project designed to help users of different mobility disability groups identify sidewalk barriers and explore routes across Penn State's campus. The project combines computer vision, manually labeled sidewalk imagery, campus sidewalk network data, and accessibility-aware routing.
+
+The application allows users to select a mobility profile and route preferences, then compares possible paths using accessibility-related information about the sidewalk network.
+
+## Key Features
+
+- Sidewalk accessibility detection: Uses a pretrained DINOv2 vision model with a classification head to identify accessibility-related sidewalk conditions.
+
+- Model evaluation: Compares model predictions against manually assigned labels for 71 Penn State campus sidewalk images.
+
+- Accessibility-aware routing: Uses Dijkstra-based routing algorithms to calculate paths through the campus sidewalk network.
+
+- Mobility personalization: Incorporates mobility profiles, including walking cane, walker, mobility scooter, manual wheelchair, and motorized wheelchair.
+
+- Route preferences: Accounts for accessibility considerations such as avoiding stairs and penalizing sidewalk conditions that may create mobility barriers.
+
+- Weather information: Incorporates current weather information into the application.
 
 ## Parent Papers
 
@@ -22,20 +38,36 @@ Accessibility Routing Model for the Safe Navigation of Vulnerable Road Users in 
 
 https://www.sciencedirect.com/science/article/pii/S2667091725000664
 
-## Dataset
+## Data
 
-We use sidewalk accessibility data and research resources associated with Project Sidewalk and the first parent paper. Our current preliminary evaluation also uses 71 campus sidewalk images with manual labels to examine model predictions for selected accessibility-related conditions.
+The project uses sidewalk accessibility data and research resources associated with Project Sidewalk and the first parent paper.
 
-## Current Direction
+Model evaluation uses 71 manually labeled Penn State campus sidewalk images. The labels provide a reference for evaluating predictions across selected sidewalk conditions.
 
-Our work currently focuses on:
+The campus routing component uses sidewalk segment and node information, along with associated accessibility data and imagery.
 
-- Applying a pretrained DINOv2 vision model to sidewalk images.
+## Model Evaluation
 
-- Evaluating predictions for accessibility-related sidewalk conditions against manual labels.
+The DINOv2 classifier was evaluated by comparing its predictions against manual labels for the 71-image dataset.
 
-- Comparing model performance across conditions using evaluation metrics and plots.
+Evaluation includes:
+
+- ROC-AUC and average precision (AP) for ranking performance.
+
+- Precision, recall, and F1-score at a 0.5 classification threshold.
+
+- ROC and precision-recall curves.
+
+- Comparisons of selected accessibility-related labels and prediction scores.
+
+Evaluation limitations: The datset is relatively small, and some conditions have very few positive examples or no positive examples. Metrics for conditions without positive examples are undefined. Exploratory threshold selection on the same evaluation dataset should not be interpreted as independent validation or evidence of generalization to new images.
+
+## Routing
+
+AccessAI uses Dijkstra-based algorithms to calculate routes through the campus sidewalk network. The routing implementation includes standard routing comparisons and accessibility-focused approaches that incorporate sidewalk conditions and mobility-related preferences.
+
+The project includes route comparisons and network connectivity analysis, including an analysis of network connectivity after excluding stair segments.
 
 ## Project Status
 
-This project is a work in progress. Current model evaluation is preliminary, and the proposed routing and personalization components are not yet represented as a completed end-to-end system.
+AccessAI includes a working application, DINOv2-based sidewalk condition predictions, evaluation results, and accessibility-aware routing implementations. The project demonstrates how computer vision and personalized routing can be combined to support more accessible navigation on Penn State's campus.

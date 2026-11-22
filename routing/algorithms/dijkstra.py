@@ -79,7 +79,7 @@ def dijkstra(graph, start, destination):
 
 if __name__ == "__main__":
     graph = load_graph()
-    result = dijkstra(graph, "N001", "N020")
+    result = dijkstra(graph, "N005", "N018")
 
     if result:
         print("Route:", " -> ".join(result["nodes"]))

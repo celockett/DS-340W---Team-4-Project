@@ -35,3 +35,7 @@ SurfaceProblem.zip
 
 # Sample images downloaded for testing
 notebooks/dataset_samples/
+notebooks/*.code-workspace
+
+# Required by the live routing app
+!results/accessai_segment_predictions.csv

@@ -1,27 +1,27 @@
 # Compare distances and segments across four routing implementations
 
-from dijkstra import load_graph as load_distance_graph, dijkstra
-from dijkstra_avoid_stairs import (
+from routing.algorithms.dijkstra import load_graph as load_distance_graph, dijkstra
+from routing.algorithms.dijkstra_avoid_stairs import (
     load_graph as load_stairs_graph,
     dijkstra_avoid_stairs
 )
-from dijkstra_accessibility import (
+from routing.algorithms.dijkstra_accessibility import (
     load_graph as load_accessibility_graph,
     dijkstra_accessibility
 )
-from dijkstra_dinov2 import (
+from routing.algorithms.dijkstra_dinov2 import (
     load_graph as load_dinov2_graph,
     dijkstra_dinov2
 )
-from dijkstra_dinov2_gradual import (
+from routing.algorithms.dijkstra_dinov2_gradual import (
     load_graph as load_gradual_graph,
     dijkstra_dinov2 as dijkstra_dinov2_gradual
 )
-from dijkstra_dinov2_reduced_cracks import (
+from routing.algorithms.dijkstra_dinov2_reduced_cracks import (
     load_graph as load_reduced_graph,
     dijkstra_dinov2 as dijkstra_reduced
 )
-from dijkstra_dinov2_reduced_both import (
+from routing.algorithms.dijkstra_dinov2_reduced_both import (
     load_graph as load_reduced_both_graph,
     dijkstra_dinov2 as dijkstra_reduced_both
 )
