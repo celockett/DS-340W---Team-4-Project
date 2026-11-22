@@ -190,6 +190,69 @@ st.set_page_config(
     layout="centered"
 )
 
+st.markdown("""
+<style>
+    /* Main app background */
+    .stApp {
+        background-color: #A9D6F5;
+        color: #101D35;
+    }
+
+    /* Main content */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        max-width: 1100px;
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+        color: #101D35 !important;
+    }
+
+    /* Regular text */
+    p, label, .stMarkdown {
+        color: #1D3557;
+    }
+
+    /* Navy buttons with white text */
+    .stButton > button {
+        background-color: #1D3557 !important;
+        color: #FFFFFF !important;
+        border: 1px solid #1D3557;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    .stButton > button p {
+        color: #FFFFFF !important;
+    }
+
+    .stButton > button:hover {
+        background-color: #101D35 !important;
+        color: #FFFFFF !important;
+        border: 1px solid #101D35;
+    }
+
+    .stButton > button:hover p {
+        color: #FFFFFF !important;
+    }
+
+    /* Input fields */
+    .stSelectbox div[data-baseweb="select"] > div,
+    .stTextInput input {
+        background-color: #EAF4FC;
+        color: #101D35;
+        border-color: #1D3557;
+    }
+
+    /* Dividers */
+    hr {
+        border-color: #7FB9E3;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 @st.cache_data
 def load_data():
     buildings = pd.read_csv(DATA_DIR / "buildings.csv")
@@ -205,7 +268,7 @@ weather = get_current_weather()
 weather_description = get_weather_description(weather["weather_code"])
 
 st.caption(
-    f"Current campus weather: {weather_description} | "
+    f"🌤️ Current Campus Weather: {weather_description} | "
     f"{weather['temperature_2m']}°F"
 )
 st.write(
@@ -247,43 +310,53 @@ st.header("Starting Point")
 start_building = st.selectbox(
     "Choose your starting building",
     buildings["building_name"].tolist(),
+    index=None,
+    placeholder="Select a starting building",
     key="start_building"
 )
 
-start_building_id = buildings.loc[
-    buildings["building_name"] == start_building,
-    "building_id"
-].iloc[0]
+start_entrance_id = None
+selected_start_entrance = None
 
-start_entrances = entrances[
-    entrances["building_id"] == start_building_id
-].copy()
+if start_building is not None:
+    start_building_id = buildings.loc[
+        buildings["building_name"] == start_building,
+        "building_id"
+    ].iloc[0]
 
-start_entrances["display_name"] = start_entrances.apply(
-    lambda row: (
-        row["entrance_name"]
-        if row["entrance_accessible"] == "Yes"
-        else f'{row["entrance_name"]} (Not marked accessible)'
-    ),
-    axis=1
-)
+    start_entrances = entrances[
+        entrances["building_id"] == start_building_id
+    ].copy()
 
-start_entrance_name = st.selectbox(
-    "Choose your starting entrance",
-    start_entrances["display_name"].tolist(),
-    key="start_entrance"
-)
+    start_entrances["display_name"] = start_entrances.apply(
+        lambda row: (
+            row["entrance_name"]
+            if row["entrance_accessible"] == "Yes"
+            else f'{row["entrance_name"]} (Not marked accessible)'
+        ),
+        axis=1
+    )
 
-start_entrance_id = start_entrances.loc[
-    start_entrances["display_name"] == start_entrance_name,
-    "entrance_id"
-].iloc[0]
+    start_entrance_name = st.selectbox(
+        "Choose your starting entrance",
+        start_entrances["display_name"].tolist(),
+        index=None,
+        placeholder="Select a starting entrance",
+        key="start_entrance"
+    )
 
-selected_start_entrance = start_entrances.loc[
-    start_entrances["display_name"] == start_entrance_name
-].iloc[0]
+    if start_entrance_name is not None:
+        start_entrance_id = start_entrances.loc[
+            start_entrances["display_name"] == start_entrance_name,
+            "entrance_id"
+        ].iloc[0]
 
-show_entrance_preview(selected_start_entrance, "Starting Entrance")
+        selected_start_entrance = start_entrances.loc[
+            start_entrances["display_name"] == start_entrance_name
+        ].iloc[0]
+
+        show_entrance_preview(selected_start_entrance, "Starting Entrance")
+
 
 # Destination
 st.divider()
@@ -292,44 +365,55 @@ st.header("Destination")
 destination_building = st.selectbox(
     "Choose your destination building",
     buildings["building_name"].tolist(),
-    index=1 if len(buildings) > 1 else 0,
+    index=None,
+    placeholder="Select a destination building",
     key="destination_building"
 )
 
-destination_building_id = buildings.loc[
-    buildings["building_name"] == destination_building,
-    "building_id"
-].iloc[0]
+destination_entrance_id = None
+selected_destination_entrance = None
 
-destination_entrances = entrances[
-    entrances["building_id"] == destination_building_id
-].copy()
+if destination_building is not None:
+    destination_building_id = buildings.loc[
+        buildings["building_name"] == destination_building,
+        "building_id"
+    ].iloc[0]
 
-destination_entrances["display_name"] = destination_entrances.apply(
-    lambda row: (
-        row["entrance_name"]
-        if row["entrance_accessible"] == "Yes"
-        else f'{row["entrance_name"]} (Not marked accessible)'
-    ),
-    axis=1
-)
+    destination_entrances = entrances[
+        entrances["building_id"] == destination_building_id
+    ].copy()
 
-destination_entrance_name = st.selectbox(
-    "Choose your destination entrance",
-    destination_entrances["display_name"].tolist(),
-    key="destination_entrance"
-)
+    destination_entrances["display_name"] = destination_entrances.apply(
+        lambda row: (
+            row["entrance_name"]
+            if row["entrance_accessible"] == "Yes"
+            else f'{row["entrance_name"]} (Not marked accessible)'
+        ),
+        axis=1
+    )
 
-destination_entrance_id = destination_entrances.loc[
-    destination_entrances["display_name"] == destination_entrance_name,
-    "entrance_id"
-].iloc[0]
+    destination_entrance_name = st.selectbox(
+        "Choose your destination entrance",
+        destination_entrances["display_name"].tolist(),
+        index=None,
+        placeholder="Select a destination entrance",
+        key="destination_entrance"
+    )
 
-selected_destination_entrance = destination_entrances.loc[
-    destination_entrances["display_name"] == destination_entrance_name
-].iloc[0]
+    if destination_entrance_name is not None:
+        destination_entrance_id = destination_entrances.loc[
+            destination_entrances["display_name"] == destination_entrance_name,
+            "entrance_id"
+        ].iloc[0]
 
-show_entrance_preview(selected_destination_entrance, "Destination Entrance")
+        selected_destination_entrance = destination_entrances.loc[
+            destination_entrances["display_name"] == destination_entrance_name
+        ].iloc[0]
+
+        show_entrance_preview(
+            selected_destination_entrance,
+            "Destination Entrance"
+        )
 
 # Convert selected entrances to internal routing node IDs
 start_node = nodes.loc[
@@ -354,10 +438,26 @@ if "route_info" not in st.session_state:
 
 if st.button("Find My Route", type="primary", use_container_width=True):
 
-    if start_node.empty or destination_node.empty:
+    # Make sure all four selections have been made
+    if (
+        start_building is None
+        or start_entrance_id is None
+        or destination_building is None
+        or destination_entrance_id is None
+    ):
         st.session_state.route_result = None
         st.session_state.route_info = None
-        st.error("Could not find a routing connection for one of your selected entrances.")
+        st.warning(
+            "Please select a starting building, starting entrance, "
+            "destination building, and destination entrance."
+        )
+
+    elif start_node.empty or destination_node.empty:
+        st.session_state.route_result = None
+        st.session_state.route_info = None
+        st.error(
+            "Could not find a routing connection for one of your selected entrances."
+        )
 
     elif start_node.iloc[0] == destination_node.iloc[0]:
         st.session_state.route_result = None
