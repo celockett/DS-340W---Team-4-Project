@@ -23,7 +23,7 @@ S021,N009,N027,"SW011, SW012, SW015, SW016, SW017",149.07,Yes,No,Flat,Concrete,N
 S022,N009,N028,SW018,38.39,No,Yes,Flat,Concrete,None
 S023,N010,N011,"SW001, SW021, SW022",120.53,No,Yes,Flat,"Concrete, Asphalt",None
 S024,N010,N032,"SW001, SW002, SW003, SW004",63.62,Yes,Yes,Flat,Concrete,None
-S025,N012,N013,"SW032, SW044, SW045",243.03,No,No,Flat,"Concrete, Asphalt, Brick",None
+S025,N012,N013,"SW032, SW044, SW045",243.03,No,Yes,Flat,"Concrete, Asphalt, Brick",None
 S026,N012,N018,"SW045, SW046",68.53,No,No,Flat,"Concrete, Brick",None
 S027,N012,N029,"SW043, SW044, SW045",63.05,No,No,Flat,"Concrete, Brick",None
 S028,N013,N014,"SW030, SW031, SW032",45.88,No,No,Flat,"Concrete, Asphalt, Brick",None
@@ -56,3 +56,7 @@ S054,N027,N032,"SW004, SW005, SW006, SW007, SW008, SW009, SW010",161.28,Yes,No,F
 S055,N028,N033,"SW020, SW023, SW024",77.38,Yes,No,Gentle,"Concrete, Asphalt",None
 S056,N029,N031,"SW043, SW044, SW046, SW047, SW048, SW051, SW052",174.37,Yes,No,Flat,Concrete,None
 S057,N031,N033,"SW024, SW052",200.98,No,No,Flat,"Concrete, Asphalt",None
+S058,N019,N034,"SW042",39.31,Yes,Yes,Flat,"Concrete, Asphalt",None
+S059,N034,N023,"SW053",67.59,No,No,Flat,"Concrete, Asphalt",None
+S060,N012,N034,"SW041, SW042, SW044, SW045",171.50,Yes,No,Flat,"Concrete, Asphalt, Brick",None
+S061,N034,N013,"SW032",71.35,Yes,Yes,Flat,"Asphalt, Brick",None

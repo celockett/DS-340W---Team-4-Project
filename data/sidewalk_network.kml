@@ -29,6 +29,34 @@
         <text><![CDATA[<h3>$[name]</h3>]]></text>
       </BalloonStyle>
     </Style>
+    <Style id="line-A52714-1775-nodesc-normal">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>1.775</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-A52714-1775-nodesc-highlight">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>2.6625</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-A52714-1775-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-A52714-1775-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-A52714-1775-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-A52714-1969-normal">
       <LineStyle>
         <color>ff1427a5</color>
@@ -51,6 +79,34 @@
         <styleUrl>#line-A52714-1969-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="line-A52714-1969-nodesc-normal">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>1.969</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-A52714-1969-nodesc-highlight">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>2.9535</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-A52714-1969-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-A52714-1969-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-A52714-1969-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-A52714-2163-normal">
       <LineStyle>
         <color>ff1427a5</color>
@@ -71,6 +127,34 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#line-A52714-2163-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-A52714-2163-nodesc-normal">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>2.163</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-A52714-2163-nodesc-highlight">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>3.2445</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-A52714-2163-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-A52714-2163-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-A52714-2163-nodesc-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="line-A52714-2356-normal">
@@ -504,6 +588,15 @@
         <Point>
           <coordinates>
             -77.868357,40.7963825,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>N034</name>
+        <styleUrl>#icon-1899-FFEA00-labelson-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -77.8679138,40.7949167,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1374,6 +1467,59 @@
             -77.8685646,40.7964081,0
             -77.8685375,40.7963774,0
             -77.868357,40.7963825,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>S058</name>
+        <styleUrl>#line-A52714-1775-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -77.8680912,40.794655,0
+            -77.8681593,40.7947046,0
+            -77.8679138,40.7949167,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>S059</name>
+        <styleUrl>#line-A52714-1969-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -77.8679138,40.7949167,0
+            -77.8673537,40.7944812,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>S060</name>
+        <styleUrl>#line-A52714-2163-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -77.8688582,40.7950169,0
+            -77.8691231,40.7947948,0
+            -77.8689278,40.7945717,0
+            -77.8688873,40.7945315,0
+            -77.8686744,40.7944856,0
+            -77.8685297,40.7944795,0
+            -77.8683283,40.7945597,0
+            -77.8681593,40.7947046,0
+            -77.8679138,40.7949167,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>S061</name>
+        <styleUrl>#line-A52714-1969-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -77.8679138,40.7949167,0
+            -77.8684347,40.7953346,0
+            -77.8685233,40.7953345,0
           </coordinates>
         </LineString>
       </Placemark>

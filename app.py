@@ -438,6 +438,23 @@ if result is not None and info is not None:
 
     st.write("Your route has", len(result["segments"]), "sidewalk segments.")
 
+    with st.expander("View Route Details"):
+        st.write("**Node sequence:**")
+        st.write(" → ".join(result["nodes"]))
+
+        st.write("**Segment sequence:**")
+        st.write(" → ".join(result["segments"]))
+
+        st.write("**Individual segment distances:**")
+        for segment_id in result["segments"]:
+            segment = segments_df[
+                segments_df["segment_id"] == segment_id
+            ].iloc[0]
+
+            st.write(
+                f"{segment_id}: {segment['start_point']} → "
+                f"{segment['end_point']} | {segment['distance_m']} m"
+            )
     st.subheader("Your Route on the Campus Map")
 
     sidewalk_segments = load_sidewalk_geometry()
