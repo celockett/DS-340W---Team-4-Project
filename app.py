@@ -184,6 +184,16 @@ def show_entrance_preview(entrance_row, title):
         else:
             st.warning("Not marked accessible")
 
+def get_accessible_alternatives(building_id, selected_entrance_id, entrances):
+    """Return other entrances in the same building marked accessible."""
+    alternatives = entrances[
+        (entrances["building_id"] == building_id)
+        & (entrances["entrance_accessible"].str.strip().str.lower() == "yes")
+        & (entrances["entrance_id"] != selected_entrance_id)
+    ].copy()
+
+    return alternatives
+
 st.set_page_config(
     page_title="AccessAI",
     page_icon="♿",
@@ -435,6 +445,9 @@ if "route_result" not in st.session_state:
 if "route_info" not in st.session_state:
     st.session_state.route_info = None
 
+if "route_failure" not in st.session_state:
+    st.session_state.route_failure = None
+
 
 if st.button("Find My Route", type="primary", use_container_width=True):
 
@@ -480,6 +493,7 @@ if st.button("Find My Route", type="primary", use_container_width=True):
         st.session_state.route_result = result
 
         if result is not None:
+            st.session_state.route_failure = None
             st.session_state.route_info = {
                 "mobility_profile": mobility_profile,
                 "start_building": start_building,
@@ -490,8 +504,86 @@ if st.button("Find My Route", type="primary", use_container_width=True):
         else:
             st.session_state.route_info = None
 
+            st.session_state.route_failure = {
+                "start_entrance_id": start_entrance_id,
+                "destination_entrance_id": destination_entrance_id,
+                "start_building_id": start_building_id,
+                "destination_building_id": destination_building_id,
+                "mobility_profile": mobility_profile,
+                "use_stairs": use_stairs,
+            }
 
-# Display the saved route OUTSIDE the button block
+# Offer accessible alternative entrances when a route cannot be found
+if st.session_state.route_failure is not None:
+    failure = st.session_state.route_failure
+
+    stair_only_entrances = ["E003", "E010", "E011", "E019"]
+
+    start_needs_alternative = (
+        failure["start_entrance_id"] in stair_only_entrances
+    )
+    destination_needs_alternative = (
+        failure["destination_entrance_id"] in stair_only_entrances
+    )
+
+    if start_needs_alternative or destination_needs_alternative:
+        st.warning(
+            "We couldn't find a route using your selected entrance. "
+            "It may require stairs. You can try another entrance "
+            "marked accessible in our data."
+        )
+
+        st.write(
+            "You can return to the entrance selections above and choose "
+            "one of these alternatives to try a different route."
+        )
+
+        if start_needs_alternative:
+            st.subheader("Alternative Starting Entrances")
+
+            start_alternatives = get_accessible_alternatives(
+                failure["start_building_id"],
+                failure["start_entrance_id"],
+                entrances
+            )
+
+            if not start_alternatives.empty:
+                st.write(
+                    f"Other entrances in {start_building} "
+                    "marked accessible in our data:"
+                )
+
+                for _, entrance in start_alternatives.iterrows():
+                    st.write(f"• {entrance['entrance_name']}")
+            else:
+                st.info("No other entrances are marked accessible for this building.")
+
+        if destination_needs_alternative:
+            st.subheader("Alternative Destination Entrances")
+
+            destination_alternatives = get_accessible_alternatives(
+                failure["destination_building_id"],
+                failure["destination_entrance_id"],
+                entrances
+            )
+
+            if not destination_alternatives.empty:
+                st.write(
+                    f"Other entrances in {destination_building} "
+                    "marked accessible in our data:"
+                )
+
+                for _, entrance in destination_alternatives.iterrows():
+                    st.write(f"• {entrance['entrance_name']}")
+            else:
+                st.info("No other entrances are marked accessible for this building.")
+
+    else:
+        st.error(
+            "No route was found. Your selected entrances are marked "
+            "accessible in our data, but a connected route may not be available."
+        )
+
 result = st.session_state.route_result
 info = st.session_state.route_info
 
