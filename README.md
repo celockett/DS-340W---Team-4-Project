@@ -4,6 +4,10 @@
 
 AI-Powered Accessibility Detection and Route Recommendation on Penn State's Campus
 
+# Launch the Live AccessAI Application
+
+https://ds-340w---team-4-project-eqnsevs7h4uwqbqoeuerxf.streamlit.app/
+
 ## Project Overview
 
 AccessAI is an accessibility-focused navigation project designed to help users of different mobility disability groups identify sidewalk barriers and explore routes across Penn State's campus. The project combines computer vision, manually labeled sidewalk imagery, campus sidewalk network data, and accessibility-aware routing.
